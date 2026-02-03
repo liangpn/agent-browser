@@ -48,3 +48,13 @@ docs/node_modules/
 docs/.next/
 docs/out/
 docs/package-lock.json
+
+.claude
+.codex/
+bin
+
+# Local repo clones (not vendored; keep as references in work/docs)
+external/agent-infra_sandbox/
+external/agent-sandbox_agent-sandbox/
+external/vercel-labs_bash-tool/
+external/vercel-labs_just-bash/

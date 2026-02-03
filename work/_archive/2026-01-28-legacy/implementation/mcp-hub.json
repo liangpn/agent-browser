@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "bash_tool": {
+      "command": "node",
+      "args": ["/opt/agent-browser/bash-mcp-server.mjs"],
+      "env": {
+        "SESSION_ID": "{{ SESSION_ID }}"
+      }
+    }
+  }
+}

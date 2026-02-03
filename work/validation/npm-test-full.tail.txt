@@ -1,0 +1,30 @@
+       ↓ should handle full URL origin
+       ↓ should handle hostname-only origin
+       ↓ should clear scoped headers for specific origin
+       ↓ should clear all scoped headers
+       ↓ should replace headers when called twice for same origin
+       ↓ should handle clearing non-existent origin gracefully
+       ↓ should create CDP session on demand
+       ↓ should reuse existing CDP session
+       ↓ should report screencasting state correctly
+       ↓ should start screencast
+       ↓ should start screencast with custom options
+       ↓ should throw when starting screencast twice
+       ↓ should handle stop when not screencasting
+       ↓ should not invalidate CDP when switching to same tab
+       ↓ should invalidate CDP session on tab switch
+       ↓ should stop screencast on tab switch
+       ↓ should inject mouse move event
+       ↓ should inject mouse click events
+       ↓ should inject mouse wheel event
+       ↓ should inject keyboard events
+       ↓ should inject char event
+       ↓ should inject keyboard with modifiers
+       ↓ should inject touch events
+       ↓ should inject multi-touch events
+
+ Test Files  1 failed | 5 passed | 1 skipped (7)
+      Tests  122 passed | 66 skipped (188)
+   Start at  22:37:18
+   Duration  369ms (transform 449ms, setup 0ms, import 949ms, tests 36ms, environment 1ms)
+

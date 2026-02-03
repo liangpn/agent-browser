@@ -1,0 +1,9 @@
+{
+  "open": {
+    "allow_schemes": ["http", "https"],
+    "allow_about_blank": true,
+    "allow_hosts": ["example.com"],
+    "allow_host_suffixes": [".example.com"]
+  }
+}
+

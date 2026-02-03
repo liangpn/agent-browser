@@ -1,0 +1,45 @@
+services:
+  sandbox:
+    container_name: aio-agent-browser
+    build:
+      context: ../..
+      dockerfile: deploy/aio-agent-browser/Dockerfile
+      args:
+        AIO_BASE_IMAGE: ${AIO_BASE_IMAGE:-ghcr.io/agent-infra/sandbox:1.0.0.152}
+    image: aio-agent-browser:dev
+    security_opt:
+      - seccomp:unconfined
+    restart: unless-stopped
+    shm_size: "2gb"
+    ports:
+      - "${HOST_PORT:-8080}:8080"
+    environment:
+      JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY:-}
+      TICKET_TTL_SECONDS: ${TICKET_TTL_SECONDS:-}
+      WORKSPACE: ${WORKSPACE:-"/home/gem"}
+      TZ: ${TZ:-Asia/Shanghai}
+      DISPLAY_WIDTH: ${DISPLAY_WIDTH:-1280}
+      DISPLAY_HEIGHT: ${DISPLAY_HEIGHT:-1024}
+      WAIT_PORTS: "8079,8091"
+      VNC_SERVER_PORT: 5900
+      PUBLIC_PORT: 8080
+      AUTH_BACKEND_PORT: 8081
+      WEBSOCKET_PROXY_PORT: 6080
+      GEM_SERVER_PORT: 8088
+      MCP_HUB_PORT: 8079
+      SANDBOX_SRV_PORT: 8091
+      JUPYTER_LAB_PORT: 8888
+      CODE_SERVER_PORT: 8200
+      MCP_SERVER_BROWSER_PORT: 8100
+      TINYPROXY_PORT: 8118
+      MCP_SERVER_MARKITDOWN_PORT: 8101
+      MCP_SERVER_CHROME_DEVTOOLS_PORT: 8102
+      BROWSER_REMOTE_DEBUGGING_PORT: ${BROWSER_REMOTE_DEBUGGING_PORT:-9222}
+      PIP_INDEX_URL: ${PIP_INDEX_URL:-https://pypi.org/simple}
+      UV_DEFAULT_INDEX: ${UV_DEFAULT_INDEX:-https://pypi.org/simple}
+      NPM_CONFIG_REGISTRY: ${NPM_CONFIG_REGISTRY:-https://registry.npmjs.org}
+      PROXY_SERVER: ${PROXY_SERVER:-}
+      DNS_OVER_HTTPS_TEMPLATES: ${DNS_OVER_HTTPS_TEMPLATES:-"https://cloudflare-dns.com/dns-query{?dns}"}
+      BROWSER_EXTRA_ARGS: ${BROWSER_EXTRA_ARGS:-}
+      DISABLE_JUPYTER: ${DISABLE_JUPYTER:-false}
+      DISABLE_CODE_SERVER: ${DISABLE_CODE_SERVER:-false}

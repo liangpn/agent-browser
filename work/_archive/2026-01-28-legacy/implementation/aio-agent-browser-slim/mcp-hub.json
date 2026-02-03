@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "agent_browser": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["/opt/agent-browser-mcp-server/server.mjs"]
+    }
+  }
+}
+

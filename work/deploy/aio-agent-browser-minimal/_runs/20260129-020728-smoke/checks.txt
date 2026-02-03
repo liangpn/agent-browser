@@ -1,0 +1,5 @@
+BASE_URL=http://localhost:8082
+/mcp=406
+/vnc/index.html=200
+POST /tickets=200
+/v1/docs=403

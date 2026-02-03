@@ -1,0 +1,24 @@
+services:
+  aio:
+    build:
+      context: ../../..
+      dockerfile: work/deploy/aio-agent-browser-minimal/Dockerfile
+    image: aio-agent-browser-minimal:dev
+    security_opt:
+      - seccomp:unconfined
+    shm_size: "2gb"
+    ports:
+      - "${HOST_PORT:-8080}:8080"
+    environment:
+      TZ: "UTC"
+      DISABLE_JUPYTER: "true"
+      DISABLE_CODE_SERVER: "true"
+      # Optional: enable AIO JWT auth by setting JWT_PUBLIC_KEY.
+      JWT_PUBLIC_KEY: ${JWT_PUBLIC_KEY:-}
+      # Keep AIO defaults unless overriding.
+      PUBLIC_PORT: "8080"
+      GEM_SERVER_PORT: "8088"
+      MCP_HUB_PORT: "8079"
+      SANDBOX_SRV_PORT: "8091"
+      WEBSOCKET_PROXY_PORT: "6080"
+      BROWSER_REMOTE_DEBUGGING_PORT: "9222"
